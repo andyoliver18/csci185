@@ -9,6 +9,40 @@ body * {
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    
+    
 }
-
+#home{  
+    
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    background-color: rgb(133, 133, 249);
+    justify-content: center;
+    text-align:center;
+}
+#bio{  
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    background-color: rgb(46, 46, 104);
+    justify-content: center;
+    text-align:center;
+}
+#portfolio{  
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    background-color: rgb(146, 179, 252);
+    justify-content: center;
+    text-align:center;
+}
+#contact{  
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+    background-color: rgb(16, 16, 217);
+    justify-content: center;
+    text-align:center;
+}
 /* create additional rules below:  */
