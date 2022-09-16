@@ -29,6 +29,7 @@ header {
     background-size: cover;
     background-position-x: center;
     background-position-y: center; 
+    filter:grayscale(100);
 }
 
 section {
@@ -44,6 +45,7 @@ section {
     background-position: center right;
     background-size: contain;
     background-attachment: fixed; 
+    filter: sepia(100);
 }
 
 .text-container {
