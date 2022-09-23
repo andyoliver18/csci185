@@ -1,17 +1,31 @@
 const defaultTheme = ev => {
-    // your code here.
+    document.querySelector("div.content").style.backgroundColor='inherit';
+    document.querySelector("h1").style.color='inherit';
+    document.querySelector("header").style.backgroundColor='#CCC';
+    document.querySelector("p").style.color='inherit';
+    
 };
 
 const oceanTheme = ev => {
-   // your code here.
+    document.querySelector("div.content").style.backgroundColor='#99cccc';
+    document.querySelector("header").style.backgroundColor='#434a6c';
+    document.querySelector("h1").style.color="white";
+    document.querySelector("p").style.color='#434a6c';
+    
 };
 
 const desertTheme = ev => {
-   // your code here.
+    document.querySelector("div.content").style.backgroundColor='#EFDEC2';
+    document.querySelector("header").style.backgroundColor='#A8651E';
+    document.querySelector("h1").style.color="#EFDEC2";
+    document.querySelector("p").style.color='#A8651E';
 };
 
 const highContrastTheme = ev => {
-    // your code here.
+    document.querySelector("div.content").style.backgroundColor='white';
+    document.querySelector("header").style.backgroundColor='black';
+    document.querySelector("h1").style.color="white";
+    document.querySelector("p").style.color='black';
 }; 
 
 /*
