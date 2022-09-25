@@ -1,0 +1,242 @@
+body {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    color: #fff;
+}
+a, a:hover, a:visited, a:active { 
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/**********/
+/* Layout */
+/**********/
+aside, footer, header, nav, section, article {
+    display: flex;
+    flex-direction: column;
+}
+body {
+    overflow: hidden;
+    margin: 0px;
+    height: 100vh;
+    /* body tag is a grid */
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto 100px;
+}
+aside {
+    background-color: #000;
+    grid-column-start: 1;
+}
+header {
+    background: #111;
+    position: sticky;
+    top: 0px;
+}
+
+/* Uncomment to see borders:  */
+/* header, nav, article {
+    border: solid 5px teal;
+    padding: 10px;
+}
+main {
+    border: solid 5px hotpink;
+    padding: 10px;
+} */
+
+main {
+    background: #111;
+    grid-column-start: 2;
+    overflow-y: auto;
+    z-index: 3;
+}
+
+footer {
+    background: #222;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+}
+
+
+/***************************/
+/* Accessories & Florishes */
+/***************************/
+::-webkit-scrollbar {
+    width: 16px;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 16px;
+    background-clip: padding-box;
+    min-height: 30px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0,0%,100%,.3);
+}
+
+/***************************/
+/* Part A: Left Navigation */
+/***************************/
+
+i.h, i.se, i.li{
+    padding:15px;
+    margin-left: 10px;
+}
+i.s{
+    margin-left: 10px;
+    
+}
+i{
+    padding-bottom: 20px;
+}
+
+/********************************/
+/* Part B: Header & Nav Styling */
+/********************************/
+
+nav{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 700px;
+    font-family:'Gotham', sans-serif;
+    font-size: 10pt;
+    padding-bottom:10px;
+   
+
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    
+}
+#upgrade{
+    display: flex;
+    flex-direction: row;  
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 25px;
+    border-style:solid;
+    border-color:white;
+    justify-content: center;
+    vertical-align: middle;
+    align-items:center;
+   margin-left: 20px;
+   margin-top: 10px;
+   font-family:'Gotham', sans-serif;
+    font-size: 10pt;
+    
+    
+}
+#profile{
+    display: flex;
+    flex-direction: row;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 25px;
+    border-width: 2px;
+    border-style:hidden;
+    justify-content: center;
+    vertical-align: middle;
+    align-items:center;
+    background-color: rgb(47, 47, 47);
+   margin-left: 20px;
+   margin-top: 10px;
+   font-family:'Gotham', sans-serif;
+   font-size: 10pt;
+    
+}
+
+i.user{
+    vertical-align: text-bottom;
+    padding-top: 16px;
+}
+
+
+
+
+/*************************/
+/* Part C: Artists Panel */
+/*************************/
+
+/* Your Code Here.
+   For the desktop view, there should be 5 cards per row.
+*/
+#featured-content{
+    display: grid;
+    height: 100vh; 
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px; 
+    
+    }
+
+.artist-card img{
+    width: 100%;
+    border-radius: 50%;
+   
+}
+.artist-card{
+    border-style: hidden;
+    border-radius: 20px;
+    background-color:#222;
+    padding:10px;
+}
+
+
+
+
+
+
+/**************************/
+/* Part D: Responsive UIs */
+/**************************/
+
+@media screen and (max-width: 1000px){
+  
+    #featured-content{
+       display:grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       grid-column-gap: 2%;
+        
+        }
+    #nav{
+        display:flex;
+        grid-template-columns: auto;
+    }
+    
+}
+
+
+@media screen and (max-width: 700px) {
+    /* Mobile Display 
+        * 2 cards per row
+        * The aside panel and "Upgrade" button should no longer be visible.
+        * There should only be a 1-column layout.
+    */
+    #featured-content{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 2%;
+         
+         }
+    body{
+        display:grid;
+        grid-template-columns: 0px;
+    }
+    #upgrade{
+        display:none;
+       
+    }
+   
+
+}
+
+
