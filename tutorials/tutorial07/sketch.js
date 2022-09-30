@@ -84,6 +84,15 @@ function drawFace(centerX,centerY,size) {
 
     //line for mouth
     strokeWeight(size / 15);
-    line(mouthLeftX, mouthY, mouthRightX, mouthY);
+   // line(mouthLeftX, mouthY, mouthRightX, mouthY);
     strokeWeight(1);
+
+    noFill()
+    
+    curve(
+        mouthLeftX, mouthY- size,       // control point
+        mouthLeftX, mouthY,             //first point    
+        mouthRightX, mouthY,             //second point
+        mouthRightX, mouthY - size,      // control point
+    );
 }
