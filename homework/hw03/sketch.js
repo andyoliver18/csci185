@@ -56,7 +56,5 @@ function drawCreature(x, y, size, primaryColor, secondaryColor) {
     ellipse(x-(size*.07), y+(size*.04), size*.033, size*.1);
 
     
-
-    
 }
 
