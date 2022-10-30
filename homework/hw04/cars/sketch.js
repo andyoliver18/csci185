@@ -58,6 +58,7 @@ function draw() {
 
 
 function drawCar(x, y, size, fillColor, wheelColor='black') {
+    
     strokeWeight(0);
     
     // body
@@ -69,4 +70,7 @@ function drawCar(x, y, size, fillColor, wheelColor='black') {
     fill(wheelColor);
     circle(x - size / 4, y, size / 6);
     circle(x + size / 4, y, size / 6);
+
+
+
 }
