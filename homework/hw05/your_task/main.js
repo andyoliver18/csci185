@@ -28,7 +28,7 @@ async function getTracks (term) {
     {
     const template = 
      `<section class="track-item preview" onclick="playSong('${trackData[counter].id}')">
-     <img src="${trackData[counter].album.image_url}">
+     <img alt="${trackData[counter].name}" src="${trackData[counter].album.image_url}">
      <i class="fas fa-play play-track" aria-hidden="true"></i>
      <div class="label">
         <h2>${trackData[counter].name} </h2>
@@ -59,11 +59,39 @@ function playSong(id){
 
 
 async function getAlbums (term) {
-    // console.log(`
-    //     get albums from spotify based on the search term
-    //     "${term}" and load them into the #albums section 
-    //     of the DOM...`);
+
+    let albumEndpoint = baseURL + "?";
+    albumEndpoint += "q=" + term + "&type=album";
+    console.log(albumEndpoint);
+
+    document.querySelector('#albums').innerHTML = "";
+
+    const albumData = await fetch(albumEndpoint).then(response => response.json());
+    console.log(albumData);
+
+    console.log(albumData[0].name);
+    
+    let counter = 0;
+    while(counter < albumData.length) {
+    const template =`<section class="album-card" id="${albumData[counter].id}">
+    <div>
+        <img alt="${albumData[counter].name}" src="${albumData[counter].image_url}">
+        <h2>${albumData[counter].name}</h2>
+        <div class="footer">
+            <a href="${albumData[counter].spotify_url}" target="_blank">
+                view on spotify
+            </a>
+        </div>
+    </div>
+</section>
+`;
+document.querySelector('#albums').insertAdjacentHTML('beforeend', template);
+counter++;
+
+
+    }
 }
+
 
 async function getArtist (term) {
     
@@ -83,7 +111,7 @@ async function getArtist (term) {
     const artistCard = 
     `<section class="artist-card" >
     <div>
-        <img src="${artistData[0].image_url}">
+        <img alt="${artistData[0].name}" src="${artistData[0].image_url}">
         <h2>${artistData[0].name} (${artistData[0].popularity})</h2>
         <div class="footer">
             <a href="${artistData[0].spotify_url}" "target= " _blank">
